@@ -30,7 +30,10 @@ pipeline {
         stage("Cerrar recursos"){
            steps {
                 bat "docker stop factura-node"
-                bat "docker container rm factura-node" 
+                bat "docker container rm factura-node"
+                bat "docker image rm maria.a.vazquez/factura-node"
+
+
 
             }            
         }
