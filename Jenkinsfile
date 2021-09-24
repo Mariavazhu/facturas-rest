@@ -16,7 +16,7 @@ pipeline {
 
        stage("Ejecución de contenedor"){
            steps {
-               bat "docker run -d --name app1 -p 8081:8080 maria.a.vazquez/fatura-node"
+               bat "docker run -d --name factura-node -p 8081:8080 maria.a.vazquez/fatura-node"
            }
            
         }
@@ -29,8 +29,8 @@ pipeline {
 
         stage("Cerrar recursos"){
            steps {
-                bat "docker stop facturas-node"
-                bat "docker container rm facturas-node" 
+                bat "docker stop factura-node"
+                bat "docker container rm factura-node" 
 
             }            
         }
